@@ -1,0 +1,7 @@
+@use './screenWidth' as *;
+
+@mixin media-queries($type) {
+  @media screen and (min-width: $type) {
+    @content;
+  }
+}

@@ -1,11 +1,17 @@
-import { RouterProvider } from 'react-router-dom'
-import router from './pages/Routes.jsx'
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './assets/css/main.css'
+import { RouterProvider } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { createRoot } from 'react-dom/client'
+import store from './redux/store.js'
+import router from './pages/Routes.jsx'
+import './assets/sass/main.scss'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+const container = document.getElementById('root')
+const root = createRoot(container)
+
+root.render(
+  <Provider store={store}>
     <RouterProvider router={router}></RouterProvider>
-  </React.StrictMode>
+  </Provider>
 )
