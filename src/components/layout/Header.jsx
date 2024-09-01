@@ -8,7 +8,7 @@ import { useEffect } from 'react'
 import { fetchUserData } from '../../redux/Actions/AsyncAction'
 
 const Header = () => {
-  const { isAuthentified, firstName } = useUser()
+  const { isAuthentified, userName } = useUser()
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -37,7 +37,7 @@ const Header = () => {
         <div className='main-nav-item'>
           <Link to='/compte-utilisateur'>
             <i className='fa fa-user-circle'></i>
-            {firstName}
+            {userName}
           </Link>
           <Link onClick={handleLogOut}>
             <i className='fa fa-sign-out'></i>

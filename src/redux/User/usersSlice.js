@@ -51,7 +51,7 @@ const usersSlice = createSlice({
           (state.userName = action.payload.userName)
       })
       .addCase(fetchUpdateUserData.fulfilled, (state, action) => {
-        state.userName = action.payload.userName
+        state.userName = action.meta.arg.userName
       })
   },
 })
